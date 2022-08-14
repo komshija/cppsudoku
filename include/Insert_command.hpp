@@ -6,10 +6,11 @@
 namespace sudoku {
 class Insert_command : public sudoku::ISudoku_command {
  public:
-  Insert_command(std::weak_ptr<Table> table, Number number);
-  void get_name(std::string& name) { name = "insert"; }
-  void exec(size_t row_index, size_t column_index);
-  void undo();
+  Insert_command(std::weak_ptr<Table> table, size_t row_index,
+                 size_t column_index, Number number);
+  void get_name(std::string& name) override { name = "insert"; }
+  void exec() override;
+  void undo() override;
 
  protected:
   std::weak_ptr<Table> m_table;

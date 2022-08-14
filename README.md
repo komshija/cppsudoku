@@ -7,6 +7,9 @@ You are able to play sudoku through command line, save save and load game.
 TODO:
 - Serialize/deserialize
 - Autocomplete (Backtracking algorithm)
+- Game loop as observer
+- Options menu
+- 
 
 Configure project
 
