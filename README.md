@@ -16,4 +16,6 @@ cmake -S . -B build
 
 Build project
 
+```bash
 cmake --build build -j12
+```
