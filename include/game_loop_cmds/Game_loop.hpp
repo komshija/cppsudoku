@@ -14,8 +14,6 @@ class Game_loop {
   void start();
 
  protected:
-  void show_main_menu();
-  bool handle_main_menu_input();
   bool handle_game_input();
 
   void show_difficulty_menu();

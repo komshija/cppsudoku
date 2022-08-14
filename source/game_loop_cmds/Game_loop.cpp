@@ -1,38 +1,10 @@
-#include <Game_loop.hpp>
+#include <game_loop_cmds/Game_loop.hpp>
 #include <iostream>
 
 namespace sudoku {
 namespace game_loop {
 
 void Game_loop::start() {}
-
-void Game_loop::show_main_menu() {
-  std::cout << "# # # # # Sudoku # # # # #" << std::endl;
-  std::cout << "1) New game" << std::endl;
-  std::cout << "2) Load game" << std::endl;
-  std::cout << "3) Exit" << std::endl;
-  std::cout << "Enter number: ";
-}
-
-bool Game_loop::handle_main_menu_input() {
-  std::string input;
-  std::cin >> input;
-  std::cin.ignore();
-  if (input.length() != 1) {
-    std::cout << "Invalid input." << std::endl;
-  }
-  if (input.find('1') != std::string::npos) {
-    // Open difficulty menu
-    // Make api call and generate new sudoku
-  } else if (input.find('2') != std::string::npos) {
-    // Open input for filename
-  } else if (input.find('3') != std::string::npos) {
-    exit(0);
-  } else {
-    return false;
-  }
-  return true;
-}
 
 void Game_loop::show_difficulty_menu() {
   std::cout << "# # # # # Select difficulty # # # # #" << std::endl;
@@ -41,10 +13,10 @@ void Game_loop::show_difficulty_menu() {
   std::cout << "3) Teen" << std::endl;
   std::cout << "4) Parent" << std::endl;
   std::cout << "5) Grandparent" << std::endl;
-  std::cout << "Enter number: ";
 }
 
 bool Game_loop::handle_difficulty_menu() {
+  std::cout << "Enter number: ";
   std::string input;
   std::cin >> input;
   std::cin.ignore();
@@ -52,12 +24,15 @@ bool Game_loop::handle_difficulty_menu() {
     std::cout << "Invalid input." << std::endl;
   }
   if (input.find('1') != std::string::npos) {
-    // Open difficulty menu
-    // Make api call and generate new sudoku
+    std::cout << "dummy baby" << std::endl;
   } else if (input.find('2') != std::string::npos) {
-    // Open input for filename
+    std::cout << "dummy kid" << std::endl;
   } else if (input.find('3') != std::string::npos) {
-    exit(0);
+    std::cout << "dummy teen" << std::endl;
+  } else if (input.find('4') != std::string::npos) {
+    std::cout << "dummy parent" << std::endl;
+  } else if (input.find('5') != std::string::npos) {
+    std::cout << "dummy grandparent" << std::endl;
   } else {
     return false;
   }
@@ -77,7 +52,6 @@ bool Game_loop::handle_game_input() {
   } else {
     m_sudoku->insert(x, y, static_cast<Number>(num));
   }
-
   return true;
 }
 
